@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>OABPrev RJ Orla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Opção 4 · Orla. Layout: an illustrated Rio skyline at dusk is the hero (red sun = brand red), then the lawyer's career told as a journey, then quiet white bands. */
+:root{
+  --deep:#0f3a52;
+  --blue:#1f6f96;
+  --globe:#3d8fb3;
+  --sky:#d9ecf5;
+  --red:#e01e22;
+  --bg:#ffffff;
+  --bg-2:#f2f7fa;
+  --text:#11262f;
+  --muted:#566a75;
+  --line:#dbe6ec;
+  --logo-ink:#39505f; --logo-sub:#1a1a1a;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --maxw:1200px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#08161e; --bg-2:#0d212c; --text:#e8f0f4; --muted:#9db1bc; --line:#1c3442; --blue:#5fb0d3; --sky:#12303f; --red:#ff4d50;
+  --logo-ink:#e9eef3; --logo-sub:#e9eef3; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#08161e; --bg-2:#0d212c; --text:#e8f0f4; --muted:#9db1bc; --line:#1c3442; --blue:#5fb0d3; --sky:#12303f; --red:#ff4d50;
+  --logo-ink:#e9eef3; --logo-sub:#e9eef3; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.02;letter-spacing:-.025em;text-wrap:balance;font-weight:800}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-display);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;gap:.55rem;white-space:nowrap;padding:.95rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-red{background:#e01e22;color:#fff}
+.btn-red:hover{background:#c5171b}
+.btn-glass{background:rgba(15,58,82,.45);color:#fff;border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+.btn-glass:hover{background:rgba(255,255,255,.24)}
+.btn-line{border:1.5px solid var(--text);color:var(--text)}
+
+/* header */
+header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:.7rem}
+.logo{display:block;text-decoration:none}
+.brand-logo{height:60px;width:auto;display:block}
+nav.menu{display:flex;gap:1.5rem}
+nav.menu a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);white-space:nowrap;position:relative}
+nav.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--red);transition:right .2s}
+nav.menu a:hover{color:var(--text)}
+nav.menu a:hover::after{right:0}
+.hcta{display:flex;gap:.5rem}
+.hcta .btn{padding:.65rem 1.1rem;font-size:.9rem}
+@media (max-width:1100px){nav.menu{display:none}}
+@media (max-width:560px){.hcta .btn-line{display:none}.brand-logo{height:48px}}
+
+/* hero landscape */
+.hero{position:relative;color:#fff;overflow:hidden;background:#0f3a52;min-height:620px;display:flex}
+.scene{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:5rem 9rem}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.8rem);max-width:13ch;margin-block:1rem 1.4rem;text-shadow:0 2px 30px rgba(15,58,82,.35)}
+.hero h1 span{color:#ffd9d4}
+.hero .lede{max-width:32rem;font-size:1.18rem;color:rgba(255,255,255,.88)}
+.hero .eyebrow{color:#ffd9d4}
+.ctas{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+.layer{transition:transform .1s linear;will-change:transform}
+@media (max-width:700px){.hero{min-height:560px}.hero .wrap{padding-block:3rem 12rem}}
+
+/* journey */
+.journey{padding-block:6rem;background:var(--bg)}
+.jh{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:3rem}
+.jh h2{font-size:clamp(2.2rem,4.6vw,3.8rem);margin-top:.7rem}
+.jh p{color:var(--muted);justify-self:end;max-width:30rem}
+.stages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.stages::before{content:"";position:absolute;left:10%;right:10%;top:27px;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.stages button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.8rem;text-align:center;padding:0 .4rem;width:100%;box-sizing:border-box}
+.stages .dot{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:2px solid var(--line);font-family:var(--f-display);font-weight:800;color:var(--muted);position:relative;z-index:1;transition:all .2s}
+.stages .dot svg{width:24px;height:24px}
+.stages b{font-family:var(--f-display);font-weight:600;font-size:1.02rem;line-height:1.2}
+.stages small{color:var(--muted);font-size:.85rem;display:block}
+.stages button > span:last-child{display:flex;flex-direction:column;gap:.15rem}
+.stages button:hover .dot{border-color:var(--blue);color:var(--blue)}
+.stages button[aria-pressed="true"] .dot{background:#e01e22;border-color:#e01e22;color:#fff;transform:scale(1.08);box-shadow:0 10px 24px -10px #e01e22}
+.stages button:focus-visible .dot{outline:3px solid var(--blue);outline-offset:3px}
+.detail{margin-top:2.6rem;background:var(--bg-2);border-radius:24px;padding:2.4rem;display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center;border:1px solid var(--line)}
+.detail h3{font-size:clamp(1.7rem,3vw,2.4rem)}
+.detail p{color:var(--muted);margin-top:.9rem}
+.detail ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.detail li{display:flex;gap:.8rem;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem}
+.detail li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:#e01e22;margin-top:.55em}
+.detail .act{margin-top:1.3rem}
+@media (max-width:860px){.jh{grid-template-columns:1fr}.jh p{justify-self:start}.detail{grid-template-columns:1fr;padding:1.6rem}
+  .stages{grid-template-columns:1fr;gap:.4rem}.stages::before{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--line) 0 8px,transparent 8px 14px)}
+  .stages button{flex-direction:row;text-align:left;gap:1rem;padding:.3rem 0}.stages small{display:block}}
+
+/* benefits ribbon */
+.ribbon{background:var(--deep);color:#fff;padding-block:5rem;position:relative;overflow:hidden}
+.ribbon h2{font-size:clamp(2rem,4vw,3.2rem);max-width:18ch}
+.rb-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;margin-top:2.6rem;background:rgba(255,255,255,.14);border-radius:20px;overflow:hidden}
+.rb{background:var(--deep);padding:1.8rem 1.4rem;display:flex;flex-direction:column;gap:.7rem;transition:background .2s}
+.rb:hover{background:#14475f}
+.rb .n{font-family:var(--f-display);font-weight:800;font-size:2.4rem;line-height:1;color:#ff8b87}
+.rb h3{font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+.rb p{color:rgba(255,255,255,.75);font-size:.93rem}
+.waves-bg{position:absolute;inset:auto 0 0 0;height:60px;opacity:.18}
+@media (max-width:1000px){.rb-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.rb-grid{grid-template-columns:1fr}}
+
+/* about + contact */
+.duo{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;padding-block:6rem;align-items:start}
+.duo h2{font-size:clamp(2rem,4vw,3.2rem);margin-block:.7rem 1.2rem}
+.duo .body{color:var(--muted);display:grid;gap:1rem;max-width:36rem}
+.pillars{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem}
+.pillars span{border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.88rem;font-weight:500}
+.contact{background:var(--bg-2);border:1px solid var(--line);border-radius:24px;padding:2rem;display:grid;gap:1.2rem}
+.contact .tel{font-family:var(--f-display);font-weight:800;font-size:2.8rem;line-height:1;letter-spacing:-.02em}
+.contact dl{margin:0;display:grid;gap:.9rem}
+.contact dt{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.contact dd{margin:0}
+.copy{all:unset;cursor:pointer;font-size:.82rem;font-weight:600;color:var(--blue);margin-left:.6rem}
+.copy:focus-visible{outline:2px solid var(--blue)}
+@media (max-width:860px){.duo{grid-template-columns:1fr;padding-block:4rem}}
+
+/* docs + news */
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding-block:0 6rem}
+.lists h3{font-size:1.6rem;margin-bottom:1rem}
+.lists ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.lists a{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:baseline}
+.lists a:hover span:first-child{color:var(--blue)}
+.lists small{color:var(--muted);font-size:.82rem;white-space:nowrap}
+@media (max-width:860px){.lists{grid-template-columns:1fr}}
+
+.final{background:linear-gradient(180deg,var(--sky),var(--bg));padding-block:5rem;text-align:left}
+.final .wrap{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.final h2{font-size:clamp(2rem,4.5vw,3.6rem);max-width:16ch}
+
+footer{border-top:1px solid var(--line);padding-block:3rem 2rem}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2rem}
+footer .brand-logo{height:68px}
+footer h4{margin:0 0 .8rem;font-family:var(--f-display);font-weight:600;font-size:.95rem}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem;color:var(--muted);font-size:.94rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--text)}
+.fb{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.84rem;color:var(--muted)}
+@media (max-width:900px){.fg{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fg{grid-template-columns:1fr}}
+
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+.sun{animation:rise 2.4s ease-out both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header><div class="wrap">
+  <a class="logo" href="#inicio" aria-label="OABPrev Rio de Janeiro, início"><svg class="brand-logo" viewBox="0 0 300 112" role="img" aria-label="OABPrev Rio de Janeiro"><defs><radialGradient id="lg1" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#7cc3e0"/><stop offset=".55" stop-color="#3d8fb3"/><stop offset="1" stop-color="#1d5a78"/></radialGradient><clipPath id="lc1"><circle cx="42" cy="46" r="31"/></clipPath></defs><path d="M71 77 98 14h3l27 63z" fill="#ec2326"/><path d="M127 14h23c11 0 18 6 18 15 0 6-3 10-8 12 7 2 11 8 11 15 0 12-9 21-22 21h-22z" fill="#ec2326"/><circle cx="42" cy="46" r="31" fill="url(#lg1)"/><g clip-path="url(#lc1)"><path d="M8 40c20-9 46-6 70 12" fill="none" stroke="#fff" stroke-width="5.5"/><g fill="#fff"><circle cx="24" cy="55" r="1.3"/><circle cx="31" cy="62" r="1.1"/><circle cx="40" cy="58" r="1.4"/><circle cx="49" cy="66" r="1.1"/><circle cx="57" cy="60" r="1.2"/><circle cx="35" cy="70" r="1"/><circle cx="46" cy="52" r="1"/><circle cx="62" cy="68" r=".9"/><circle cx="27" cy="30" r="1"/><circle cx="52" cy="27" r=".9"/></g></g><text x="178" y="72" style="fill:var(--logo-ink,#39505f);font:400 54px 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:-1px">Prev</text><rect x="10" y="85" width="282" height="3.2" fill="#ec2326"/><text x="151" y="107" text-anchor="middle" style="fill:var(--logo-sub,#1a1a1a);font:800 12.5px 'Arial Narrow',Arial,sans-serif;letter-spacing:1.6px">RIO DE JANEIRO</text></svg></a>
+  <nav class="menu" aria-label="Principal">
+    <a href="#quem-somos">Quem somos</a>
+    <a href="#beneficios">Planos e Benefícios</a>
+    <a href="#transparencia">Transparência</a>
+    <a href="#transparencia">Notícias</a>
+    <a href="https://www.oabprev-rj.com.br/wp/duvidas/">Dúvidas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="hcta">
+    <a class="btn btn-line" href="https://oabprev-rj.atendeprevidencia.com.br">Área do participante</a>
+    <a class="btn btn-red" href="https://oabprev-rj.adesaoweb.atendeprevidencia.com.br/">Aderir</a>
+  </div>
+</div></header>
+
+<main id="inicio">
+<section class="hero">
+  <svg class="scene" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0f3a52"/><stop offset=".45" stop-color="#2a7aa0"/><stop offset=".78" stop-color="#9cc9dc"/><stop offset="1" stop-color="#f6d6cf"/>
+      </linearGradient>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff6a5c" stop-opacity=".55"/><stop offset="1" stop-color="#ff6a5c" stop-opacity="0"/></radialGradient>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d5a78"/><stop offset="1" stop-color="#0f3a52"/></linearGradient>
+    </defs>
+    <rect width="1440" height="820" fill="url(#sky)"/><g transform="translate(0 200)">
+    <g class="layer" data-depth="0.06"><g class="sun">
+      <circle cx="1040" cy="430" r="190" fill="url(#glow)"/>
+      <circle cx="1040" cy="430" r="78" fill="#e01e22"/>
+    </g></g>
+    <g class="layer" data-depth="0.1">
+      <path d="M0 500 C150 470 260 455 420 470 C560 482 640 440 760 452 C880 464 960 430 1100 446 C1240 462 1340 450 1440 460 V620 H0Z" fill="#7fb6cf" opacity=".55"/>
+    </g>
+    <g class="layer" data-depth="0.18">
+      <!-- Corcovado with Cristo -->
+      <path d="M380 520 C470 488 560 450 640 404 C690 376 738 330 768 300 L784 300 C806 320 842 352 880 392 C930 444 980 486 1030 520Z" fill="#1d5a78"/>
+      <rect x="774" y="276" width="4" height="24" fill="#0f3a52"/><rect x="766" y="282" width="20" height="3.5" fill="#0f3a52"/>
+      <!-- Urca + Pão de Açúcar -->
+      <path d="M880 530 C900 482 940 462 985 466 C1010 468 1022 480 1032 492 C1046 420 1080 330 1135 316 C1190 304 1222 380 1240 450 C1252 494 1262 515 1275 530Z" fill="#164b66"/>
+      <path d="M985 466 L1135 318" stroke="#fff" stroke-width="1.2" opacity=".75"/>
+      <rect x="1052" y="394" width="10" height="7" rx="1.5" fill="#fff" opacity=".9"/>
+    </g>
+    <g class="layer" data-depth="0.28">
+      <rect y="520" width="1440" height="100" fill="url(#sea)"/>
+      <g stroke="#e01e22" stroke-width="3" stroke-linecap="round" opacity=".7">
+        <path d="M1000 538h80"/><path d="M1012 552h56"/><path d="M1024 566h32"/>
+      </g>
+      <path id="wv" d="M0 600 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke="#fff" stroke-width="5" opacity=".9"/>
+      <use href="#wv" y="-14" opacity=".35"/>
+    </g></g>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">Plano RJPrev · Previdência da advocacia fluminense</span>
+    <h1>Construa seu futuro com quem <span>entende a advocacia.</span></h1>
+    <p class="lede">Ser verdadeiramente fluminense é saber que o futuro se constrói hoje. A OABPrev RJ é o fundo de pensão sem fins lucrativos dos advogados do Rio e de suas famílias.</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="https://oabprev-rj.adesaoweb.atendeprevidencia.com.br/">Faça sua adesão</a>
+      <a class="btn btn-glass" href="#jornada">Conheça sua jornada</a>
+    </div>
+  </div>
+</section>
+
+<section class="journey" id="jornada"><div class="wrap">
+  <div class="jh">
+    <div><span class="eyebrow">Sua jornada</span><h2>Do primeiro processo à aposentadoria.</h2></div>
+    <p>A OABPrev RJ acompanha cada etapa da sua carreira. Toque em uma etapa para ver o que o plano RJPrev faz por você nela.</p>
+  </div>
+  <ol class="stages" id="stages">
+    <li><button aria-pressed="false" data-i="0"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 8l9 5 9-5-9-5zM7 10.5V15c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></span><span><b>Inscrição na OAB-RJ</b><small>O começo de tudo</small></span></button></li>
+    <li><button aria-pressed="true" data-i="1"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4 10-10"/></svg></span><span><b>Adesão ao RJPrev</b><small>Online, em minutos</small></span></button></li>
+    <li><button aria-pressed="false" data-i="2"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 16V11M12 16V7M17 16V4"/></svg></span><span><b>Anos de contribuição</b><small>Menos IR todo ano</small></span></button></li>
+    <li><button aria-pressed="false" data-i="3"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><span><b>Aposentadoria</b><small>Renda do seu jeito</small></span></button></li>
+    <li><button aria-pressed="false" data-i="4"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span><b>Família protegida</b><small>Sempre</small></span></button></li>
+  </ol>
+  <div class="detail" id="detail" aria-live="polite"></div>
+</div></section>
+
+<section class="ribbon" id="beneficios">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#ff8b87">Planos e benefícios</span>
+    <h2 style="margin-top:.7rem">Cinco benefícios em um só plano.</h2>
+    <div class="rb-grid">
+      <div class="rb"><span class="n">Renda</span><h3>Aposentadoria programada</h3><p>Você define como receberá sua renda, nas regras do estatuto.</p></div>
+      <div class="rb"><span class="n">12%</span><h3>Redução do IR</h3><p>Aportes de até 12% da renda bruta anual podem ser deduzidos.</p></div>
+      <div class="rb"><span class="n">Seguro</span><h3>Invalidez</h3><p>Renda conforme o seguro de invalidez contratado.</p></div>
+      <div class="rb"><span class="n">Legado</span><h3>Pensão por morte</h3><p>Seu beneficiário recebe os recursos acumulados.</p></div>
+      <div class="rb"><span class="n">1/12</span><h3>Abono anual</h3><p>Por mês de benefício recebido, pago até 20 de dezembro.</p></div>
+    </div>
+  </div>
+  <svg class="waves-bg" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 q30 -22 60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0 t60 0" fill="none" stroke="#fff" stroke-width="10"/></svg>
+</section>
+
+<div class="wrap duo" id="quem-somos">
+  <div>
+    <span class="eyebrow">Quem somos</span>
+    <h2>Feita pela advocacia, para a advocacia.</h2>
+    <div class="body">
+      <p>A OABPrev RJ é o fundo de pensão multipatrocinado, sem fins lucrativos, que atende aos advogados do Estado do Rio de Janeiro e seus familiares. A OAB-RJ e a CAARJ são os instituidores.</p>
+      <p>Nossa visão é ser reconhecida pelo setor da advocacia nacional como líder em gestão de produtos de previdência, por sua competência e eficácia.</p>
+    </div>
+    <div class="pillars"><span>Instituidores OAB-RJ e CAARJ</span><span>Regulada pela PREVIC</span><span>ISO 9001:2015</span><span>Resolução CGPC 13</span></div>
+  </div>
+  <aside class="contact" id="contato" aria-label="Atendimento">
+    <span class="eyebrow">Fale com a gente</span>
+    <div><span class="tel" id="tel">3003-0794</span><button class="copy" id="copy" type="button">Copiar</button></div>
+    <dl>
+      <div><dt>Horário</dt><dd>9h às 18h</dd></div>
+      <div><dt>E-mail</dt><dd>atendimento@oabprev-rj.com.br</dd></div>
+      <div><dt>Endereço</dt><dd>Av. Beira Mar, 200, 7º andar, Centro, Rio de Janeiro, RJ</dd></div>
+    </dl>
+  </aside>
+</div>
+
+<div class="wrap lists" id="transparencia">
+  <div>
+    <h3>Transparência</h3>
+    <ul>
+      <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2015/04/EstatutoOABPrevRJweb.compressed.pdf"><span>Estatuto da OABPrev RJ</span><small>PDF</small></a></li>
+      <li><a href="https://www.oabprev-rj.com.br/wp/transparencia/"><span>Relatórios anuais e demonstrações</span><small>Ver</small></a></li>
+      <li><a href="https://www.oabprev-rj.com.br/wp/transparencia/"><span>Política de investimentos</span><small>Ver</small></a></li>
+      <li><a href="https://www.oabprev-rj.com.br/wp/quem-somos/"><span>E-books Futuro e Doutor Futuro</span><small>Grátis</small></a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Notícias</h3>
+    <ul>
+      <li><a href="https://www.oabprev-rj.com.br/wp/noticias/"><span>Cinco metas financeiras que você deve considerar a partir de hoje</span><small>17 fev 2025</small></a></li>
+      <li><a href="https://www.oabprev-rj.com.br/wp/noticias/"><span>9 conselhos para quem deseja investir em previdência privada</span><small>17 jan 2025</small></a></li>
+      <li><a href="https://www.oabprev-rj.com.br/wp/noticias/"><span>O presente de Natal que o seu futuro merece</span><small>17 dez 2024</small></a></li>
+      <li><a href="https://www.oabprev-rj.com.br/wp/noticias/"><span>Todas as notícias</span><small>→</small></a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="final"><div class="wrap">
+  <h2>Vamos construir um futuro novo com a OABPrev RJ.</h2>
+  <a class="btn btn-red" href="https://oabprev-rj.adesaoweb.atendeprevidencia.com.br/">Faça sua adesão online</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fg">
+    <div><a class="logo" href="#inicio" aria-label="OABPrev Rio de Janeiro, início"><svg class="brand-logo" viewBox="0 0 300 112" role="img" aria-label="OABPrev Rio de Janeiro"><defs><radialGradient id="lg2" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#7cc3e0"/><stop offset=".55" stop-color="#3d8fb3"/><stop offset="1" stop-color="#1d5a78"/></radialGradient><clipPath id="lc2"><circle cx="42" cy="46" r="31"/></clipPath></defs><path d="M71 77 98 14h3l27 63z" fill="#ec2326"/><path d="M127 14h23c11 0 18 6 18 15 0 6-3 10-8 12 7 2 11 8 11 15 0 12-9 21-22 21h-22z" fill="#ec2326"/><circle cx="42" cy="46" r="31" fill="url(#lg2)"/><g clip-path="url(#lc2)"><path d="M8 40c20-9 46-6 70 12" fill="none" stroke="#fff" stroke-width="5.5"/><g fill="#fff"><circle cx="24" cy="55" r="1.3"/><circle cx="31" cy="62" r="1.1"/><circle cx="40" cy="58" r="1.4"/><circle cx="49" cy="66" r="1.1"/><circle cx="57" cy="60" r="1.2"/><circle cx="35" cy="70" r="1"/><circle cx="46" cy="52" r="1"/><circle cx="62" cy="68" r=".9"/><circle cx="27" cy="30" r="1"/><circle cx="52" cy="27" r=".9"/></g></g><text x="178" y="72" style="fill:var(--logo-ink,#39505f);font:400 54px 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:-1px">Prev</text><rect x="10" y="85" width="282" height="3.2" fill="#ec2326"/><text x="151" y="107" text-anchor="middle" style="fill:var(--logo-sub,#1a1a1a);font:800 12.5px 'Arial Narrow',Arial,sans-serif;letter-spacing:1.6px">RIO DE JANEIRO</text></svg></a></div>
+    <div><h4>Atendimento</h4><ul><li>3003-0794</li><li>9h às 18h</li><li>atendimento@oabprev-rj.com.br</li></ul></div>
+    <div><h4>Acesso rápido</h4><ul><li><a href="https://oabprev-rj.atendeprevidencia.com.br">Área do participante</a></li><li><a href="https://oabprev-rj.adesaoweb.atendeprevidencia.com.br/">Adesão online</a></li><li><a href="https://www.oabprev-rj.com.br/wp/duvidas/">Dúvidas</a></li></ul></div>
+    <div><h4>Redes</h4><ul><li><a href="https://www.instagram.com/oabprevrj/">Instagram</a></li><li><a href="https://www.facebook.com/oabprevrj/">Facebook</a></li><li><a href="https://www.linkedin.com/company/oabprev-rj/">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="fb"><span>© 2026 OABPrev RJ · Proposta de redesign · Opção 4, Orla</span><span>Política de privacidade · Cookies</span></div>
+</div></footer>
+
+<script>
+(function(){
+  const D=[
+    {h:'Sua carreira começa na OAB-RJ.',p:'Ao se inscrever na Ordem, você já pode contar com um fundo de pensão feito pela própria advocacia fluminense, instituído pela OAB-RJ e pela CAARJ.',l:['Fundo sem fins lucrativos','Plano aberto também aos seus familiares','E-books gratuitos de educação financeira'],a:['Conheça a OABPrev RJ','#quem-somos']},
+    {h:'Adesão online, em poucos minutos.',p:'Faça sua adesão pela internet, escolha quanto quer contribuir e acompanhe tudo pela Área do participante.',l:['Você define o valor da contribuição','Cobertura de invalidez e morte','Saldo e extratos sempre à mão'],a:['Fazer minha adesão','https://oabprev-rj.adesaoweb.atendeprevidencia.com.br/']},
+    {h:'Cada ano contribuindo, menos imposto.',p:'Quem declara no modelo completo pode deduzir contribuições de até 12% da renda bruta anual. O imposto que você deixa de pagar vira patrimônio.',l:['Dedução de até 12% da renda bruta anual','Informe de rendimentos na Área do participante','Aportes extras quando quiser'],a:['Ver benefícios','#beneficios']},
+    {h:'Sua aposentadoria, do seu jeito.',p:'Você define como vai receber a sua renda de aposentadoria, considerando as regras estabelecidas no estatuto da OABPrev RJ.',l:['Renda de aposentadoria programada','Abono anual pago até 20 de dezembro','Atendimento pelo 3003-0794'],a:['Ler o estatuto','https://www.oabprev-rj.com.br/wp/wp-content/uploads/2015/04/EstatutoOABPrevRJweb.compressed.pdf']},
+    {h:'Quem você ama, protegido.',p:'Se algo acontecer, o beneficiário que você indicar recebe os recursos acumulados. Em caso de invalidez, você recebe uma renda conforme o seguro contratado.',l:['Pensão por morte','Aposentadoria por invalidez','Indicação de beneficiários'],a:['Falar com o atendimento','#contato']}
+  ];
+  const btns=[...document.querySelectorAll('#stages button')],det=document.getElementById('detail');
+  function show(i){btns.forEach((b,j)=>b.setAttribute('aria-pressed',j===i));const d=D[i];
+    det.innerHTML=`<div><h3>${d.h}</h3><p>${d.p}</p><div class="act"><a class="btn btn-red" href="${d.a[1]}">${d.a[0]}</a></div></div><ul>${d.l.map(x=>`<li>${x}</li>`).join('')}</ul>`}
+  btns.forEach((b,i)=>b.addEventListener('click',()=>show(i)));show(1);
+
+  const cp=document.getElementById('copy');
+  cp.addEventListener('click',()=>{
+    const done=()=>{cp.textContent='Copiado';setTimeout(()=>cp.textContent='Copiar',1800)};
+    try{navigator.clipboard.writeText('3003-0794').then(done,()=>sel())}catch(e){sel()}
+    function sel(){const r=document.createRange();r.selectNodeContents(document.getElementById('tel'));const s=getSelection();s.removeAllRanges();s.addRange(r)}
+  });
+
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const L=[...document.querySelectorAll('.layer')];
+    addEventListener('scroll',()=>{const y=scrollY;if(y>900)return;L.forEach(l=>l.style.transform=`translateY(${y*l.dataset.depth}px)`)},{passive:true});
+  }
+})();
+</script>
+
+</html>
