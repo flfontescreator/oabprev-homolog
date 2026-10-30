@@ -1,15 +1,14 @@
-# OABPrev RJ · Propostas de redesign
+# OABPrev-RJ · Homologação
 
-Quatro propostas para a nova home do site da OABPrev RJ (https://www.oabprev-rj.com.br/wp/).
+Novo site da OABPrev-RJ para o período de liquidação extrajudicial: comunicado do liquidante, Transparência, notícias e atendimento.
 
-| Opção | Pasta |
+| Caminho | Conteúdo |
 |---|---|
-| 1 · Calçadão | `opcao-1-calcadao/` |
-| 2 · Tribuna | `opcao-2-tribuna/` |
-| 3 · Horizonte | `opcao-3-horizonte/` |
-| 4 · Orla | `opcao-4-orla/` |
+| `/` | Site novo (`index.html`) |
+| `/propostas/` | As 4 propostas de redesign anteriores (Calçadão, Tribuna, Horizonte, Orla) |
+| `/marca/` | Logos da OABPrev-RJ, instituidores e órgãos reguladores |
 
-Cada opção é um único `index.html`, sem dependências além das fontes do Google Fonts. Abra `index.html` na raiz para ver a lista das quatro.
+Página única em HTML, sem build. Fontes do Google Fonts; documentos de Transparência apontam para os PDFs do site atual.
 
 O logo em `marca/logo-oabprev-rj.svg` foi redesenhado em vetor a partir de uma imagem de baixa resolução; troque pelo arquivo oficial quando o cliente enviar.
 

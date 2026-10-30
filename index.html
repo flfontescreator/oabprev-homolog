@@ -3,16 +3,820 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>OABPrev RJ · Propostas de redesign</title>
-<style>:root{--red:#e01e22;--ink:#11262f;--muted:#566a75;--line:#dbe6ec}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;padding:3rem max(16px,env(safe-area-inset-left,0px))}main{max-width:820px;margin:auto}h1{font-size:2rem;margin:1.5rem 0 .5rem}p{color:var(--muted)}ul{list-style:none;padding:0;margin:2rem 0;display:grid;gap:.8rem}a{display:block;border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;text-decoration:none;color:inherit}a:hover{border-color:var(--red)}b{display:block;font-size:1.15rem}span{color:var(--muted);font-size:.95rem}</style>
-</head><body><main>
-<img src="marca/logo-oabprev-rj.svg" alt="OABPrev Rio de Janeiro" width="220">
-<h1>Propostas de redesign da home</h1>
-<p>Quatro direções visuais para o novo site da OABPrev RJ, todas com o conteúdo real do site atual.</p>
-<ul>
-<li><a href="opcao-1-calcadao/"><b>Opção 1 · Calçadão</b><span>Topo azul com as ondas de Copacabana e simulador de dedução no IR.</span></a></li>
-<li><a href="opcao-2-tribuna/"><b>Opção 2 · Tribuna</b><span>Estilo editorial, títulos grandes e o 12% do IR em destaque.</span></a></li>
-<li><a href="opcao-3-horizonte/"><b>Opção 3 · Horizonte</b><span>Cara de aplicativo, Área do participante e simulador de patrimônio.</span></a></li>
-<li><a href="opcao-4-orla/"><b>Opção 4 · Orla</b><span>Paisagem do Rio ao entardecer e a jornada da carreira do advogado.</span></a></li>
-</ul></main></body></html>
+<meta name="robots" content="noindex, nofollow">
+<title>OABPrev-RJ</title>
+<meta name="description" content="OABPrev-RJ: comunicados oficiais, documentos e canais de atendimento aos participantes e assistidos do plano RJPrev.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: navy "ato oficial" band carries the one bold moment; everything below is a quiet,
+   cool-paper register (ledger rows, document table) where red appears only as a fine mark. */
+:root {
+  --navy: #001E47;          /* marca: azul institucional original */
+  --navy-2: #0B2D5C;
+  --red: #EC2324;           /* marca: vermelho original, só como marca/fio */
+  --red-text: #BE1C20;      /* vermelho com contraste AA para texto */
+  --paper: #F3F5F8;         /* neutro frio, puxado para o azul da marca */
+  --surface: #FFFFFF;
+  --ink: #0D1B33;
+  --muted: #56627A;
+  --line: #D6DDE7;
+  --line-strong: #B9C3D2;
+  --band: #001E47;
+  --band-ink: #F2F5FA;
+  --band-muted: #A9B8CF;
+  --band-line: rgba(255,255,255,.16);
+  --plate: #FFFFFF;
+  --plate-blue: #0B5CB8;   /* azul do sinal da Previdência Social, sempre sobre a placa branca */
+  --band-accent: #FFB3B4;
+  --band-btn: #001E47;
+  --band-tbc-bg: rgba(255, 220, 120, .16);
+  --band-tbc-ink: #FFE29A;
+  --tbc-bg: #FFF3C9;
+  --tbc-ink: #6B4E00;
+  --focus: #2F6FD6;
+
+  --f-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --s-xs: .8125rem; --s-sm: .9375rem; --s-md: 1.0625rem; --s-lg: 1.375rem;
+  --s-xl: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  --s-hero: clamp(2.25rem, 1.3rem + 4.2vw, 4.25rem);
+  --wrap: 72rem;
+  --radius: 4px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --navy: #8FB2EA; --navy-2: #B5CBF0; --red: #FF4F55; --red-text: #FF7C80;
+    --paper: #091326; --surface: #0F1D35; --ink: #E7ECF4; --muted: #9AA8BF;
+    --line: #213351; --line-strong: #31476B;
+    --band: #001A3F; --band-ink: #F2F5FA; --band-muted: #A9B8CF; --band-line: rgba(255,255,255,.14);
+    --plate: #FFFFFF; --tbc-bg: #3A2F0C; --tbc-ink: #F5D77A; --focus: #7FA8FF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --navy: #8FB2EA; --navy-2: #B5CBF0; --red: #FF4F55; --red-text: #FF7C80;
+  --paper: #091326; --surface: #0F1D35; --ink: #E7ECF4; --muted: #9AA8BF;
+  --line: #213351; --line-strong: #31476B;
+  --band: #001A3F; --band-ink: #F2F5FA; --band-muted: #A9B8CF; --band-line: rgba(255,255,255,.14);
+  --plate: #FFFFFF; --tbc-bg: #3A2F0C; --tbc-ink: #F5D77A; --focus: #7FA8FF;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--f-body); font-size: var(--s-md); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap {
+  max-width: var(--wrap); margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 48rem) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.tbc {
+  background: var(--tbc-bg); color: var(--tbc-ink);
+  font-family: var(--f-mono); font-size: .85em; font-style: normal;
+  padding: .05em .4em; border-radius: 2px; white-space: nowrap;
+}
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: 16px; top: 16px; z-index: 50; background: var(--surface); padding: .5rem .75rem; }
+
+/* ---------- Header ---------- */
+.site-head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.head-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; }
+.brand { display: flex; align-items: center; gap: .875rem; text-decoration: none; }
+.plate { background: var(--plate); display: inline-flex; align-items: center; padding: .3rem .5rem; border-radius: var(--radius); }
+.plate img { display: block; height: 2.9rem; width: auto; }
+.brand-status {
+  display: none; font-size: var(--s-xs); line-height: 1.3; color: var(--muted);
+  border-left: 1px solid var(--line); padding-left: .875rem;
+}
+.brand-status b { display: block; color: var(--red-text); font-weight: 600; letter-spacing: .02em; }
+@media (min-width: 64rem) { .brand-status { display: block; } }
+.nav { display: flex; align-items: center; gap: .25rem; }
+.nav a {
+  text-decoration: none; font-size: var(--s-sm); font-weight: 500; color: var(--ink);
+  padding: .5rem .8rem; position: relative;
+}
+.nav a.link::after {
+  content: ""; position: absolute; left: .8rem; right: .8rem; bottom: .2rem; height: 2px;
+  background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .2s ease;
+}
+.nav a.link:hover::after, .nav a.link[aria-current="page"]::after { transform: scaleX(1); }
+.nav a.link[aria-current="page"] { color: var(--navy); }
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; cursor: pointer;
+  font: 600 var(--s-sm)/1 var(--f-body); letter-spacing: .01em;
+  padding: .85rem 1.15rem; border-radius: var(--radius); border: 1px solid transparent;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn svg { width: 1em; height: 1em; flex: none; }
+.btn-navy { background: var(--navy); color: var(--surface); }
+.btn-navy:hover { background: var(--navy-2); }
+.nav .btn { margin-left: .5rem; padding: .7rem 1rem; }
+.nav a.btn-navy, .nav a.btn-navy:hover { color: var(--surface); }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: var(--radius); padding: .55rem .7rem; color: var(--ink); font: 600 var(--s-xs)/1 var(--f-body); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+@media (max-width: 52rem) {
+  .menu-btn { display: inline-flex; }
+  .nav {
+    position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+    padding: .5rem max(16px, env(safe-area-inset-right, 0px)) 1rem max(16px, env(safe-area-inset-left, 0px));
+  }
+  .nav[data-open="false"] { display: none; }
+  .nav a { padding: .9rem 0; border-bottom: 1px solid var(--line); }
+  .nav a.link::after { left: 0; right: auto; width: 1.5rem; bottom: -1px; }
+  .nav .btn { margin: 1rem 0 0; justify-content: center; border-bottom: 0; }
+}
+
+/* ---------- Hero / ato oficial ---------- */
+.act { background: var(--band); color: var(--band-ink); }
+.act-grid { display: grid; gap: 2.5rem; padding-block: clamp(2.75rem, 6vw, 5rem); }
+@media (min-width: 60rem) { .act-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 4rem; align-items: start; } }
+.eyebrow {
+  display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+  font: 500 var(--s-xs)/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+}
+.eyebrow::before { content: ""; width: .55rem; height: .55rem; background: var(--red); flex: none; }
+.act .eyebrow { color: var(--band-muted); }
+.act h1 {
+  font-family: var(--f-display); font-weight: 500; font-size: var(--s-hero); line-height: 1.04;
+  letter-spacing: -.015em; margin-top: 1.25rem; max-width: 15ch;
+}
+.act h1 em { font-style: italic; font-weight: 400; color: var(--band-accent); }
+.act-lede { margin-top: 1.5rem; max-width: 34rem; color: var(--band-muted); font-size: var(--s-md); }
+.act-lede strong { color: var(--band-ink); font-weight: 600; }
+.act-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.btn-light { background: var(--band-ink); color: var(--band-btn); }
+.btn-light:hover { background: var(--plate); }
+.btn-ghost { border-color: var(--band-line); color: var(--band-ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--band-muted); }
+
+.record { border-top: 2px solid var(--red); padding-top: 1.25rem; }
+.record h2 { font: 500 var(--s-xs)/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--band-muted); }
+.record dl { margin: 1rem 0 0; display: grid; }
+.record .row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1rem; padding-block: .8rem; border-bottom: 1px solid var(--band-line); }
+.record dt { color: var(--band-muted); font-size: var(--s-sm); }
+.record dd { margin: 0; font-size: var(--s-sm); font-weight: 500; min-width: 0; }
+.record .tbc, .act .tbc { background: var(--band-tbc-bg); color: var(--band-tbc-ink); }
+.record-note { margin-top: 1rem; font-size: var(--s-xs); color: var(--band-muted); }
+@media (max-width: 26rem) { .record .row { grid-template-columns: 1fr; gap: .15rem; } }
+
+/* ---------- Sections ---------- */
+.section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.section + .section { border-top: 1px solid var(--line); }
+.section-head { display: grid; gap: .9rem; margin-bottom: 2.5rem; max-width: 44rem; }
+.section-head .eyebrow { color: var(--muted); }
+.section-head h2 { font-family: var(--f-display); font-weight: 500; font-size: var(--s-xl); line-height: 1.15; letter-spacing: -.01em; }
+.section-head p { color: var(--muted); }
+.split { display: grid; gap: 2.5rem; }
+@media (min-width: 60rem) { .split { grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); gap: 4rem; } .split .section-head { margin-bottom: 0; position: sticky; top: 6.5rem; align-self: start; } }
+
+/* Orientações: a short register, not cards */
+.guide { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line-strong); }
+.guide li { display: grid; grid-template-columns: minmax(0, 1fr); gap: .4rem; padding-block: 1.5rem; border-bottom: 1px solid var(--line); }
+@media (min-width: 44rem) { .guide li { grid-template-columns: 14rem minmax(0, 1fr); gap: 2rem; } }
+.guide h3 { font-size: var(--s-md); font-weight: 600; line-height: 1.35; }
+.guide p { color: var(--muted); max-width: 40rem; }
+.guide p a { color: var(--ink); text-underline-offset: 3px; text-decoration-color: var(--red); }
+
+/* Documentos */
+.docs-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.docs { width: 100%; border-collapse: collapse; min-width: 38rem; font-size: var(--s-sm); }
+.docs th { text-align: left; font: 500 var(--s-xs)/1.4 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: .9rem 1.1rem; border-bottom: 1px solid var(--line-strong); white-space: nowrap; }
+.docs td { padding: 1.05rem 1.1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.docs tr:last-child td { border-bottom: 0; }
+.docs .doc-title { font-weight: 600; }
+.docs .doc-sub { display: block; color: var(--muted); font-size: var(--s-xs); margin-top: .2rem; font-weight: 400; }
+.docs .date { white-space: nowrap; color: var(--muted); }
+.docs a.get { display: inline-flex; gap: .35rem; align-items: center; font-weight: 600; color: var(--navy); text-decoration: none; white-space: nowrap; }
+.docs a.get:hover { text-decoration: underline; text-underline-offset: 3px; }
+.docs a.get svg { width: .95em; height: .95em; }
+.pending { color: var(--muted); font-style: italic; white-space: nowrap; }
+
+/* Transparência: índice de grupos + registro de documentos */
+.transp-first { padding-block: 1.5rem clamp(3rem, 7vw, 5.5rem); }
+.transp-first .section-head { gap: .5rem; margin-bottom: 1.75rem; }
+.transp-head h2 { font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem); line-height: 1.02; }
+.transp-grid { display: grid; gap: 2rem; }
+@media (min-width: 60rem) { .transp-grid { grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 4rem; } .transp-index { position: sticky; top: 6.5rem; align-self: start; } }
+.transp-index ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+@media (min-width: 60rem) { .transp-index ul { display: grid; gap: 0; border-top: 1px solid var(--line-strong); } }
+.transp-index a { display: flex; justify-content: space-between; gap: 1rem; text-decoration: none; font-size: var(--s-sm); padding: .5rem .85rem; border: 1px solid var(--line-strong); border-radius: 999px; }
+@media (min-width: 60rem) { .transp-index a { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: .75rem 0; } }
+.transp-index a .mono { color: var(--muted); font-size: var(--s-xs); }
+.transp-index a:hover { color: var(--navy); }
+.transp-groups { display: grid; gap: 3rem; min-width: 0; }
+.tgroup { scroll-margin-top: 6rem; min-width: 0; }
+.tgroup h3 { font-family: var(--f-display); font-weight: 500; font-size: var(--s-lg); line-height: 1.25; padding-bottom: .75rem; border-bottom: 1px solid var(--line-strong); }
+.tgroup.key { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--red); border-radius: var(--radius); padding: 1.5rem clamp(1rem, 3vw, 1.75rem) .5rem; }
+.dlist { list-style: none; margin: 0; padding: 0; }
+.dlist li > a, .dlist li.soon { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.25rem; row-gap: .2rem; align-items: baseline; padding-block: 1rem; border-bottom: 1px solid var(--line); text-decoration: none; }
+.dlist li:last-child > a, .dlist li.soon:last-child { border-bottom: 0; }
+@media (min-width: 40rem) { .dlist li > a { grid-template-columns: minmax(0, 1fr) auto 1rem; } }
+.dlist .t { font-weight: 500; min-width: 0; }
+.dlist .m { font-size: var(--s-xs); color: var(--muted); white-space: nowrap; }
+.dlist svg { width: 1rem; height: 1rem; color: var(--navy); align-self: center; display: none; }
+@media (min-width: 40rem) { .dlist svg { display: block; } }
+@media (max-width: 39.99rem) { .dlist .m { grid-column: 1; } }
+.dlist a:hover .t { text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 3px; }
+.dlist li.soon .t { color: var(--muted); }
+.dlist li.soon .m { font-style: italic; }
+
+/* Notícias */
+.news { display: grid; gap: 0; border-top: 1px solid var(--line-strong); }
+.news-item { display: grid; gap: .5rem; padding-block: 1.5rem; border-bottom: 1px solid var(--line); text-decoration: none; }
+@media (min-width: 44rem) { .news-item { grid-template-columns: 9rem minmax(0, 1fr) auto; gap: 2rem; align-items: baseline; } }
+.news-item time { font: 400 var(--s-xs)/1.4 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.news-item h3 { font-family: var(--f-display); font-size: var(--s-lg); font-weight: 500; line-height: 1.25; }
+.news-item p { color: var(--muted); font-size: var(--s-sm); margin-top: .35rem; max-width: 42rem; }
+.tag { font: 500 .6875rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--red-text); white-space: nowrap; }
+.tag.archive { color: var(--muted); }
+a.news-item:hover h3 { text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.more { display: inline-flex; margin-top: 1.75rem; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
+.year { font: 500 var(--s-xs)/1 var(--f-mono); letter-spacing: .08em; color: var(--muted); padding: 2rem 0 .75rem; }
+.filters { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.chip { font: 500 var(--s-xs)/1 var(--f-body); padding: .55rem .85rem; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--surface); }
+
+/* Atendimento */
+.channels { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 44rem) { .channels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 72rem) { .channels.four { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.channel { background: var(--surface); padding: 1.5rem; display: grid; gap: .5rem; align-content: start; min-width: 0; }
+.channel .label { font: 500 var(--s-xs)/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.channel .value { font-size: var(--s-lg); font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+.channel .value.sm { font-size: var(--s-md); font-weight: 500; }
+.channel .hint { font-size: var(--s-sm); color: var(--muted); }
+.channel .actions { display: flex; gap: 1rem; margin-top: .4rem; flex-wrap: wrap; }
+.linkish { background: none; border: 0; padding: 0; font: 600 var(--s-sm)/1.4 var(--f-body); color: var(--navy); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
+.linkish:hover { text-decoration-color: var(--red); }
+
+/* Página interna */
+.page-head { background: var(--surface); border-bottom: 1px solid var(--line); }
+.page-head .inner { padding-block: clamp(2.5rem, 6vw, 4rem); display: grid; gap: 1rem; }
+.page-head .eyebrow { color: var(--muted); }
+.page-head h1 { font-family: var(--f-display); font-weight: 500; font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem); line-height: 1.08; letter-spacing: -.015em; max-width: 22ch; }
+.page-head p { color: var(--muted); max-width: 40rem; }
+.prose { max-width: 40rem; display: grid; gap: 1.1rem; }
+.prose p { font-size: var(--s-md); }
+.prose h2 { font-family: var(--f-display); font-weight: 500; font-size: var(--s-lg); margin-top: 1rem; }
+.prose ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .5rem; }
+.prose li::marker { color: var(--red); }
+.lead { font-family: var(--f-display); font-size: var(--s-lg) !important; line-height: 1.45; }
+
+.founders { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 40rem) { .founders { grid-template-columns: 1fr 1fr; } }
+.founders div { background: var(--surface); padding: 1.25rem 1.4rem; }
+.founders b { display: block; font-size: var(--s-md); }
+.founders span { color: var(--muted); font-size: var(--s-sm); }
+
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; border-left: 1px solid var(--line-strong); }
+.timeline li { position: relative; padding: 0 0 2rem 1.75rem; display: grid; gap: .3rem; }
+.timeline li::before { content: ""; position: absolute; left: -5px; top: .45rem; width: 9px; height: 9px; background: var(--paper); border: 1px solid var(--line-strong); }
+.timeline li.now::before { background: var(--red); border-color: var(--red); }
+.timeline time { font: 400 var(--s-xs)/1.4 var(--f-mono); color: var(--muted); }
+.timeline b { font-weight: 600; }
+.timeline p { color: var(--muted); font-size: var(--s-sm); max-width: 36rem; }
+.src { font-size: var(--s-xs); color: var(--muted); }
+
+/* Comunicado */
+.notice { max-width: 44rem; display: grid; gap: 1.25rem; }
+.notice-meta { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font: 400 var(--s-xs)/1.5 var(--f-mono); color: var(--muted); padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); }
+.notice p { font-size: var(--s-md); }
+.notice h2 { font-family: var(--f-display); font-weight: 500; font-size: var(--s-lg); margin-top: .75rem; }
+.sign { border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: .75rem; font-size: var(--s-sm); color: var(--muted); }
+.sign b { color: var(--ink); display: block; font-size: var(--s-md); }
+
+/* Contato */
+.contact-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 60rem) { .contact-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; } }
+form { display: grid; gap: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); }
+.field { display: grid; gap: .4rem; min-width: 0; }
+.field-row { display: grid; gap: 1.1rem; }
+@media (min-width: 40rem) { .field-row { grid-template-columns: 1fr 1fr; } }
+label { font-size: var(--s-sm); font-weight: 600; }
+label .opt { font-weight: 400; color: var(--muted); }
+input, select, textarea {
+  font: 400 var(--s-md)/1.4 var(--f-body); color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line-strong); border-radius: var(--radius); padding: .75rem .85rem; width: 100%;
+}
+textarea { min-height: 9rem; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--focus); outline-offset: 0; border-color: transparent; }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; justify-content: space-between; }
+.form-foot small { color: var(--muted); font-size: var(--s-xs); max-width: 24rem; }
+.form-ok { border-left: 3px solid var(--navy); padding: .75rem 1rem; background: var(--paper); font-size: var(--s-sm); }
+
+/* ---------- Footer ---------- */
+.site-foot { background: var(--surface); border-top: 1px solid var(--line); font-size: var(--s-sm); }
+.foot-grid { display: grid; gap: 2.5rem; padding-block: 3.5rem 2.5rem; }
+@media (min-width: 56rem) { .foot-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 3rem; } }
+.foot-grid h2 { font: 500 var(--s-xs)/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.foot-grid address { font-style: normal; color: var(--muted); margin-top: 1.25rem; line-height: 1.7; }
+.foot-grid address b { color: var(--ink); font-weight: 600; }
+.foot-orgs { display: flex; flex-wrap: wrap; gap: 2rem 4rem; padding-block: 2.5rem; border-bottom: 1px solid var(--line); }
+.org-group h2 { font: 500 var(--s-xs)/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: .9rem; }
+.org-logos { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.org-logos a { display: block; border-radius: var(--radius); }
+.org-logos .plate { height: 4rem; padding: .7rem 1rem; border: 1px solid var(--line); }
+.org-logos img { height: 100%; width: auto; }
+.org-logos .plate.ps { gap: .55rem; }
+.org-logos .plate.ps span { font: 800 .8rem/1.05 var(--f-body); letter-spacing: .03em; text-transform: uppercase; color: var(--plate-blue); }
+.foot-links { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.foot-links a { text-decoration: none; color: var(--ink); }
+.foot-links a:hover { text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 3px; }
+.foot-base { border-top: 1px solid var(--line); padding-block: 1.25rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; color: var(--muted); font-size: var(--s-xs); }
+
+/* Entrada da página: um único movimento, a partir de um estado visível */
+@keyframes rise { from { transform: translateY(6px); opacity: .6; } to { transform: none; opacity: 1; } }
+[data-view]:not([hidden]) .act-grid > *, [data-view]:not([hidden]) .page-head .inner { animation: rise .45s ease-out both; }
+[data-view]:not([hidden]) .act-grid > :nth-child(2) { animation-delay: .08s; }
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#inicio" aria-label="OABPrev-RJ, página inicial">
+      <span class="plate"><img src="marca/logo-oabprev-rj.svg" alt="OABPrev Rio de Janeiro" width="300" height="112"></span>
+      <span class="brand-status"><b>Em liquidação extrajudicial</b>Plano RJPrev · Fiscalização Previc</span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" data-open="false" aria-label="Principal">
+      <a class="link" href="#quem-somos">Quem somos</a>
+      <a class="link" href="#noticias">Notícias</a>
+      <a class="link" href="#contato">Contato</a>
+      <a class="btn btn-navy" href="https://oabprev-rj.atendeprevidencia.com.br" target="_blank" rel="noopener">
+        Área do Participante
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ================= INÍCIO ================= -->
+<div data-view="inicio">
+  <section class="section transp-first" id="transparencia" aria-labelledby="transp-title">
+    <div class="wrap">
+      <div class="section-head transp-head">
+        <p class="eyebrow">Prestação de contas</p>
+        <h2 id="transp-title">Transparência</h2>
+        <p>A OABPrev-RJ é comprometida com o princípio da transparência. Aqui estão os documentos da liquidação, os relatórios anuais e os documentos estatutários da entidade.</p>
+      </div>
+      <div class="transp-grid">
+        <nav class="transp-index" aria-label="Grupos de documentos">
+          <ul>
+          <li><a href="#t-liquidacao">Liquidação extrajudicial<span class="mono">2</span></a></li>
+          <li><a href="#t-rai">Relatório Anual de Informações (RAI)<span class="mono">5</span></a></li>
+          <li><a href="#t-rjprev">Plano RJPrev<span class="mono">4</span></a></li>
+          <li><a href="#t-estatuto">Estatuto e regimentos<span class="mono">5</span></a></li>
+          <li><a href="#t-investimentos">Política de Investimentos<span class="mono">1</span></a></li>
+          <li><a href="#t-eleicoes">Eleições 2025<span class="mono">5</span></a></li>
+          </ul>
+        </nav>
+        <div class="transp-groups">
+        <section class="tgroup key" id="t-liquidacao" aria-labelledby="t-liquidacao-h">
+          <h3 id="t-liquidacao-h">Liquidação extrajudicial</h3>
+          <ul class="dlist">
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2026/07/Comunicado-aos-Participantes.pdf" target="_blank" rel="noopener"><span class="t">Palavra do liquidante: comunicado aos participantes e assistidos</span><span class="m mono">14/07/2026 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2026/07/Edital-para-Conhecimento-de-Terceiros.pdf" target="_blank" rel="noopener"><span class="t">Edital para conhecimento de terceiros</span><span class="m mono">14/07/2026 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li class="soon"><span class="t">Quadro Geral de Credores</span><span class="m">Será publicado nesta seção</span></li>
+          </ul>
+        </section>
+        <section class="tgroup" id="t-rai" aria-labelledby="t-rai-h">
+          <h3 id="t-rai-h">Relatório Anual de Informações (RAI)</h3>
+          <ul class="dlist">
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2026/04/RAI_OABPrev_RJ_2025_29ABR26.pdf" target="_blank" rel="noopener"><span class="t">RAI 2025</span><span class="m mono">29/04/2026 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/04/OABPREV-RJ_RAI_2024_Versao-final_2-anexos.pdf" target="_blank" rel="noopener"><span class="t">RAI 2024</span><span class="m mono">Exercício 2024 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2023/07/OABPREV-RJ-2022-RAI-COMPLETO.pdf" target="_blank" rel="noopener"><span class="t">RAI 2022, versão completa</span><span class="m mono">01/05/2023 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2022/05/RAI-COMPLETO.pdf" target="_blank" rel="noopener"><span class="t">RAI 2021, versão completa</span><span class="m mono">Exercício 2021 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2022/05/RAI-RESUMIDO.pdf" target="_blank" rel="noopener"><span class="t">RAI 2021, versão resumida</span><span class="m mono">Exercício 2021 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          </ul>
+        </section>
+        <section class="tgroup" id="t-rjprev" aria-labelledby="t-rjprev-h">
+          <h3 id="t-rjprev-h">Plano RJPrev</h3>
+          <ul class="dlist">
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2026/01/EDITAL_TRANSFERENCIA_RJPREV_-_VF_16.01.2026_assinado_assinado_assinado_28229_assinado.pdf" target="_blank" rel="noopener"><span class="t">Edital de transferência do gerenciamento do Plano RJPrev</span><span class="m mono">16/01/2026 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2018/01/Regulamento-OABPrev-RJ-Vers%C3%A3o-Digital.pdf" target="_blank" rel="noopener"><span class="t">Regulamento do plano aprovado pela Previc</span><span class="m mono">PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2016/04/Comparativo_Plano-RJPREV_resgate-parcial.pdf" target="_blank" rel="noopener"><span class="t">Quadro comparativo das alterações no regulamento</span><span class="m mono">fev 2016 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2012/06/Cartilha.pdf" target="_blank" rel="noopener"><span class="t">Cartilha do participante</span><span class="m mono">PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          </ul>
+        </section>
+        <section class="tgroup" id="t-estatuto" aria-labelledby="t-estatuto-h">
+          <h3 id="t-estatuto-h">Estatuto e regimentos</h3>
+          <ul class="dlist">
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/01/Estatuto-versao-2024-Portaria-de-Aprovacao-Previc.pdf" target="_blank" rel="noopener"><span class="t">Estatuto, versão 2024, com a Portaria Previc nº 733 de aprovação</span><span class="m mono">21/08/2024 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2024/09/Quadro-Comparativo-De-Para-de-Alteracao-do-Estatuto-da-OABPrevRJ-e-Novo-Estatuto-consolidado-OABPrevRJ.pdf" target="_blank" rel="noopener"><span class="t">Quadro comparativo das alterações no estatuto</span><span class="m mono">PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2018/03/Regimento-Interno-Conselho-Deliberativo-Setembro-2017.pdf" target="_blank" rel="noopener"><span class="t">Regimento interno do Conselho Deliberativo</span><span class="m mono">PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2018/03/Regimento-Interno-Conselho-Fiscal-Setembro-2017.pdf" target="_blank" rel="noopener"><span class="t">Regimento interno do Conselho Fiscal</span><span class="m mono">31/08/2017 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2018/03/Regimento-Interno-Diretoria-Executiva-Setembro-2017.pdf" target="_blank" rel="noopener"><span class="t">Regimento interno da Diretoria Executiva</span><span class="m mono">31/08/2017 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          </ul>
+        </section>
+        <section class="tgroup" id="t-investimentos" aria-labelledby="t-investimentos-h">
+          <h3 id="t-investimentos-h">Política de Investimentos</h3>
+          <ul class="dlist">
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/05/Politica-de-Investimentos-2025-2029.pdf" target="_blank" rel="noopener"><span class="t">Política de Investimentos 2025–2029</span><span class="m mono">27/02/2025 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          </ul>
+        </section>
+        <section class="tgroup" id="t-eleicoes" aria-labelledby="t-eleicoes-h">
+          <h3 id="t-eleicoes-h">Eleições 2025</h3>
+          <ul class="dlist">
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/04/Edital-Eleicoes.pdf" target="_blank" rel="noopener"><span class="t">Edital das eleições</span><span class="m mono">11/04/2025 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/04/Anexo_Item_9_Regulamento_das_Eleicoes_2025-1.pdf" target="_blank" rel="noopener"><span class="t">Regulamento das eleições</span><span class="m mono">27/03/2025 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/05/Edital-Reabertura-Inscricoes-Chapa.docx" target="_blank" rel="noopener"><span class="t">Edital de reabertura das inscrições de chapa</span><span class="m mono">07/05/2025 · DOCX</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/05/Anexo-I.doc" target="_blank" rel="noopener"><span class="t">Anexo I</span><span class="m mono">DOC</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+            <li><a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2025/05/TERMO-DE-HOMOLOGACAO-DE-CHAPA-UNICA.pdf" target="_blank" rel="noopener"><span class="t">Termo de homologação de chapa única</span><span class="m mono">16/05/2025 · PDF</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+          </ul>
+        </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="act" aria-labelledby="act-title">
+    <div class="wrap act-grid">
+      <div>
+        <p class="eyebrow">Palavra do liquidante · <span class="mono">14/07/2026</span></p>
+        <h1 id="act-title">A OABPrev-RJ está em <em>liquidação extrajudicial.</em></h1>
+        <p class="act-lede">A medida foi decretada pela Previc, órgão que fiscaliza os fundos de pensão. <strong>Participantes e assistidos não precisam habilitar seus créditos:</strong> o liquidante organiza o Quadro Geral de Credores a partir dos registros da entidade. O atendimento continua funcionando durante todo o processo.</p>
+        <div class="act-actions">
+          <a class="btn btn-light" href="#comunicado">Ler o comunicado completo</a>
+          <a class="btn btn-ghost" href="https://oabprev-rj.atendeprevidencia.com.br" target="_blank" rel="noopener">Acessar a Área do Participante</a>
+        </div>
+      </div>
+      <aside class="record" aria-labelledby="record-title">
+        <h2 id="record-title">Situação da entidade</h2>
+        <dl>
+          <div class="row"><dt>Entidade</dt><dd>OABPrev-RJ</dd></div>
+          <div class="row"><dt>Plano</dt><dd>RJPrev</dd></div>
+          <div class="row"><dt>Regime</dt><dd>Liquidação extrajudicial</dd></div>
+          <div class="row"><dt>Decretada por</dt><dd>Previc</dd></div>
+          <div class="row"><dt>Publicação</dt><dd>Diário Oficial da União, <span class="mono">06/07/2026</span></dd></div>
+          <div class="row"><dt>Liquidante</dt><dd>Dagomar Alécio Anhê</dd></div>
+          <div class="row"><dt>Atendimento</dt><dd>Mantido durante a liquidação</dd></div>
+        </dl>
+        <p class="record-note">Portarias Previc nº 500 e nº 501/2026, conforme o comunicado e o edital do liquidante.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="section-head">
+        <p class="eyebrow">Orientações</p>
+        <h2>O que fazer agora</h2>
+        <p>Recomendações do liquidante aos participantes e assistidos durante o processo.</p>
+      </div>
+      <ul class="guide">
+        <li>
+          <h3>Mantenha seu cadastro em dia</h3>
+          <p>Endereço, e-mail e dados bancários atualizados garantem que as comunicações oficiais cheguem a você no prazo. Revise tudo na <a href="https://oabprev-rj.atendeprevidencia.com.br" target="_blank" rel="noopener">Área do Participante</a>.</p>
+        </li>
+        <li>
+          <h3>Acompanhe os comunicados</h3>
+          <p>O Quadro Geral de Credores e os prazos do processo serão divulgados neste site, na seção <a href="#transparencia">Transparência</a>.</p>
+        </li>
+        <li>
+          <h3>Não é preciso habilitar créditos</h3>
+          <p>O liquidante registra o crédito de cada participante e assistido com base nos dados atuariais e financeiros da entidade. Você não precisa dar entrada em nenhum pedido individual.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="wrap split">
+      <div class="section-head">
+        <p class="eyebrow">Notícias</p>
+        <h2>Últimos comunicados</h2>
+        <p>Publicações recentes sobre a entidade e o plano RJPrev.</p>
+        <a class="more" href="#noticias">Ver todas as notícias</a>
+      </div>
+      <div class="news" id="home-news"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Atendimento</p>
+        <h2>Fale com a OABPrev-RJ</h2>
+      </div>
+      <div class="channels four" data-channels></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= COMUNICADO ================= -->
+<div data-view="comunicado" hidden>
+  <header class="page-head">
+    <div class="wrap inner">
+      <p class="eyebrow">Comunicado oficial</p>
+      <h1>Palavra do liquidante aos participantes e assistidos</h1>
+    </div>
+  </header>
+  <section class="section">
+    <div class="wrap">
+      <article class="notice">
+        <div class="notice-meta">
+          <span>Publicado em 14/07/2026</span>
+          <span>Portaria Previc nº 500/2026 · DOU de 06/07/2026</span>
+        </div>
+        <p class="lead">A Superintendência Nacional de Previdência Complementar (Previc) decretou a liquidação extrajudicial da OABPrev-RJ e nomeou Dagomar Alécio Anhê como liquidante.</p>
+        <h2>Quadro Geral de Credores</h2>
+        <p>Com a decretação, começa o concurso de credores, que apura os direitos e as obrigações da entidade. O liquidante organiza o Quadro Geral de Credores, em que os créditos de participantes, assistidos e demais credores são registrados e classificados pela ordem legal de preferência.</p>
+        <p><strong>Participantes e assistidos não precisam habilitar seus créditos individualmente.</strong> O quadro é elaborado com base nos registros e nos dados atuariais e financeiros da entidade e será divulgado neste site.</p>
+        <h2>Pagamento dos créditos</h2>
+        <p>O pagamento dos créditos reconhecidos depende da disponibilidade de recursos apurada durante e ao final do processo, respeitada a ordem legal.</p>
+        <h2>O que fazer</h2>
+        <p>Mantenha endereço, e-mail e dados bancários atualizados na <a href="https://oabprev-rj.atendeprevidencia.com.br" target="_blank" rel="noopener">Área do Participante</a> e acompanhe os comunicados publicados na seção <a href="#transparencia">Transparência</a>, principalmente a divulgação do Quadro Geral de Credores e os prazos do processo.</p>
+        <h2>Atendimento</h2>
+        <p>A entidade segue em funcionamento regular durante toda a liquidação. O atendimento continua pelo telefone <span class="mono">3003-0794</span>, pelo e-mail <span class="mono">atendimento@oabprev-rj.com.br</span> e pela página de <a href="#contato">Contato</a>.</p>
+        <div class="sign"><b>Dagomar Alécio Anhê</b>Liquidante da OABPrev-RJ · <a href="https://www.oabprev-rj.com.br/wp/wp-content/uploads/2026/07/Comunicado-aos-Participantes.pdf" target="_blank" rel="noopener">Comunicado assinado (PDF)</a></div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- ================= QUEM SOMOS ================= -->
+<div data-view="quem-somos" hidden>
+  <header class="page-head">
+    <div class="wrap inner">
+      <p class="eyebrow">Quem somos</p>
+      <h1>Fundo de pensão dos advogados do Rio de Janeiro</h1>
+    </div>
+  </header>
+  <section class="section">
+    <div class="wrap split">
+      <div class="section-head">
+        <p class="eyebrow">A entidade</p>
+        <h2>OABPrev-RJ</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">A OABPrev-RJ é o fundo de pensão multipatrocinado, sem fins lucrativos, que atende aos advogados do estado do Rio de Janeiro e seus familiares.</p>
+        <p>Os participantes contam com o plano previdenciário RJPrev, que oferece benefícios de renda para a aposentadoria programada e cobertura de riscos por invalidez e morte.</p>
+        <p>A entidade é fiscalizada pela Superintendência Nacional de Previdência Complementar (Previc) e encontra-se em liquidação extrajudicial, decretada pelo órgão.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap split">
+      <div class="section-head">
+        <p class="eyebrow">Instituidores</p>
+        <h2>Quem instituiu o plano</h2>
+      </div>
+      <div class="founders">
+        <div><b>OAB/RJ</b><span>Ordem dos Advogados do Brasil, Seção do Estado do Rio de Janeiro</span></div>
+        <div><b>CAARJ</b><span>Caixa de Assistência dos Advogados do Estado do Rio de Janeiro</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap split">
+      <div class="section-head">
+        <p class="eyebrow">Histórico recente</p>
+        <h2>Linha do tempo</h2>
+        <p>Atos e decisões que afetam a entidade, do mais antigo ao mais recente.</p>
+      </div>
+      <ol class="timeline">
+        <li><time class="mono">06/08/2024</time><b>Transferência da gestão do RJPrev</b><p>A administração do plano RJPrev é transferida para a Mongeral.</p></li>
+        <li><time class="mono">30/09/2024</time><b>Novo estatuto aprovado</b><p>A Previc aprova as alterações no Estatuto da OABPrev-RJ.</p></li>
+        <li><time class="mono">jan 2026</time><b>Edital de transferência do Plano RJPrev</b><p>Publicado o edital para transferência do gerenciamento do plano a outra entidade.</p></li>
+        <li class="now"><time class="mono">06/07/2026</time><b>Liquidação extrajudicial</b><p>A Previc decreta a liquidação extrajudicial da OABPrev-RJ e nomeia Dagomar Alécio Anhê como liquidante.</p></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- ================= NOTÍCIAS ================= -->
+<div data-view="noticias" hidden>
+  <header class="page-head">
+    <div class="wrap inner">
+      <p class="eyebrow">Notícias</p>
+      <h1>Comunicados e publicações</h1>
+      <p>Os comunicados oficiais aparecem primeiro. Os artigos de educação financeira publicados até 2025 seguem disponíveis no arquivo.</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filtrar notícias">
+        <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todas</button>
+        <button class="chip" type="button" data-filter="comunicado" aria-pressed="false">Comunicados</button>
+        <button class="chip" type="button" data-filter="arquivo" aria-pressed="false">Arquivo</button>
+      </div>
+      <div id="all-news"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= CONTATO ================= -->
+<div data-view="contato" hidden>
+  <header class="page-head">
+    <div class="wrap inner">
+      <p class="eyebrow">Contato</p>
+      <h1>Fale com a OABPrev-RJ</h1>
+      <p>Atendimento de segunda a sexta, das 9h às 18h. Respondemos as mensagens do formulário pelo e-mail informado.</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="wrap contact-grid">
+      <form id="contact-form" novalidate>
+        <div class="field-row">
+          <div class="field"><label for="c-nome">Nome completo</label><input id="c-nome" name="nome" autocomplete="name" required></div>
+          <div class="field"><label for="c-cpf">CPF <span class="opt">(opcional)</span></label><input id="c-cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="c-email">E-mail</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="c-tel">Telefone <span class="opt">(opcional)</span></label><input id="c-tel" name="tel" type="tel" autocomplete="tel" placeholder="(21) 00000-0000"></div>
+        </div>
+        <div class="field">
+          <label for="c-assunto">Assunto</label>
+          <select id="c-assunto" name="assunto">
+            <option>Liquidação extrajudicial</option>
+            <option>Benefício em pagamento</option>
+            <option>Saldo e extrato</option>
+            <option>Atualização cadastral</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+        <div class="field"><label for="c-msg">Mensagem</label><textarea id="c-msg" name="mensagem" required></textarea></div>
+        <div class="form-foot">
+          <small>Seus dados são usados apenas para responder a esta mensagem.</small>
+          <button class="btn btn-navy" type="submit">Enviar mensagem</button>
+        </div>
+        <p class="form-ok" id="form-status" role="status" hidden></p>
+      </form>
+      <div class="channels" data-channels></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-orgs">
+    <section class="org-group" aria-labelledby="g-inst">
+      <h2 id="g-inst">Instituidores</h2>
+      <div class="org-logos">
+        <a href="https://www.oabrj.org.br" target="_blank" rel="noopener" title="OAB/RJ"><span class="plate"><img src="marca/logo-oabrj.png" alt="OAB/RJ" width="900" height="193"></span></a>
+        <a href="https://www.caarj.org.br" target="_blank" rel="noopener" title="CAARJ"><span class="plate"><img src="marca/logo-caarj.png" alt="CAARJ" width="900" height="281"></span></a>
+      </div>
+    </section>
+    <section class="org-group" aria-labelledby="g-reg">
+      <h2 id="g-reg">Órgãos reguladores</h2>
+      <div class="org-logos">
+        <a href="https://www.gov.br/previdencia/pt-br" target="_blank" rel="noopener" title="Previdência Social"><span class="plate ps"><img src="marca/simbolo-previdencia-social.png" alt="" width="480" height="331"><span>Previdência<br>Social</span></span></a>
+        <a href="https://www.gov.br/previc/pt-br" target="_blank" rel="noopener" title="Previc"><span class="plate"><img src="marca/logo-previc.png" alt="Previc" width="900" height="275"></span></a>
+        <a href="https://www.abnt.org.br" target="_blank" rel="noopener" title="ABNT"><span class="plate"><img src="marca/logo-abnt.png" alt="ABNT" width="900" height="401"></span></a>
+      </div>
+    </section>
+  </div>
+  <div class="wrap foot-grid">
+    <div>
+      <span class="plate"><img src="marca/logo-oabprev-rj.svg" alt="OABPrev Rio de Janeiro" width="300" height="112" style="height:3rem;width:auto"></span>
+      <address>
+        <b>OABPrev-RJ</b> · Entidade em liquidação extrajudicial<br>
+        Av. Beira Mar, 200, 7º andar, Centro<br>
+        Rio de Janeiro, RJ · CNPJ <i class="tbc">01.727.770/0001-01</i>
+      </address>
+    </div>
+    <div>
+      <h2>Navegação</h2>
+      <ul class="foot-links">
+        <li><a href="#quem-somos">Quem somos</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="https://oabprev-rj.atendeprevidencia.com.br" target="_blank" rel="noopener">Área do Participante</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 OABPrev-RJ</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const AREA = "https://oabprev-rj.atendeprevidencia.com.br";
+  const WP = "https://www.oabprev-rj.com.br/wp/";
+
+  const NEWS = [
+    { tipo: "comunicado", data: "2026-07-14", titulo: "Palavra do liquidante aos participantes e assistidos", resumo: "Previc decreta a liquidação extrajudicial da OABPrev-RJ. Veja o que muda e o que fazer.", href: "#comunicado" },
+    { tipo: "comunicado", data: "2024-09-30", titulo: "OABPrev-RJ tem novo estatuto aprovado", resumo: "Previc aprova as alterações no Estatuto. Quadro comparativo e portaria disponíveis.", href: WP + "noticias/" },
+    { tipo: "comunicado", data: "2024-08-06", titulo: "Transferência da gestão do RJPrev para a Mongeral", resumo: "Mudança na administração do plano RJPrev.", href: WP + "transferencia-da-gestao-administracao-do-rjprev-para-a-mongeral/" },
+    { tipo: "arquivo", data: "2025-02-17", titulo: "Cinco metas financeiras que você deve considerar a partir de hoje", href: WP + "metas-financeiras-que-voce-precisa-ter/" },
+    { tipo: "arquivo", data: "2025-01-17", titulo: "9 conselhos para quem deseja investir em previdência privada", href: WP + "noticias/" },
+    { tipo: "arquivo", data: "2024-12-17", titulo: "O presente de Natal que o seu futuro merece", href: WP + "noticias/" },
+    { tipo: "arquivo", data: "2024-11-19", titulo: "Por que investir na sua independência financeira e se preparar para a terceira idade?", href: WP + "noticias/" },
+    { tipo: "arquivo", data: "2024-10-17", titulo: "A previdência privada e o futuro dos seus filhos", href: WP + "noticias/" },
+    { tipo: "arquivo", data: "2024-09-13", titulo: "Previdência Social e previdência privada: qual a diferença?", href: WP + "a-previdencia-social-e-a-previdencia-privada/" },
+    { tipo: "arquivo", data: "2024-08-16", titulo: "Glossário da previdência privada", href: WP + "glossario-da-previdencia-privada/" },
+    { tipo: "arquivo", data: "2024-07-10", titulo: "A previdência privada e a sucessão patrimonial", href: WP + "noticias/" },
+    { tipo: "arquivo", data: "2024-04-15", titulo: "Previdência privada para a mulher advogada", href: WP + "noticias/" },
+    { tipo: "arquivo", data: "2024-02-09", titulo: "Como declarar a previdência privada no Imposto de Renda", href: WP + "noticias/" }
+  ];
+
+  const fmt = d => d ? d.split("-").reverse().join("/") : '<i class="tbc">dd/mm/2026</i>';
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const item = n => {
+    const ext = !n.href.startsWith("#");
+    return `<a class="news-item" href="${n.href}"${ext ? ' target="_blank" rel="noopener"' : ""}>
+      <time class="mono">${fmt(n.data)}</time>
+      <div><h3>${esc(n.titulo)}</h3>${n.resumo ? `<p>${esc(n.resumo)}</p>` : ""}</div>
+      <span class="tag${n.tipo === "arquivo" ? " archive" : ""}">${n.tipo === "arquivo" ? "Educação financeira" : "Comunicado"}</span>
+    </a>`;
+  };
+
+  document.getElementById("home-news").innerHTML = NEWS.filter(n => n.tipo === "comunicado").slice(0, 3).map(item).join("");
+
+  const all = document.getElementById("all-news");
+  const renderAll = f => {
+    const list = NEWS.filter(n => f === "todos" || n.tipo === f);
+    const groups = {};
+    list.forEach(n => { const y = n.data ? n.data.slice(0, 4) : "2026"; (groups[y] ||= []).push(n); });
+    all.innerHTML = Object.keys(groups).sort((a, b) => b - a)
+      .map(y => `<p class="year">${y}</p><div class="news">${groups[y].map(item).join("")}</div>`).join("");
+  };
+  renderAll("todos");
+  document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll("[data-filter]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    renderAll(b.dataset.filter);
+  }));
+
+  const CHANNELS = `
+    <div class="channel"><span class="label">Área do Participante</span><span class="value sm">Extrato, saldo e dados cadastrais</span><div class="actions"><a class="linkish" href="${AREA}" target="_blank" rel="noopener">Acessar</a></div></div>
+    <div class="channel"><span class="label">Telefone</span><span class="value mono">3003-0794</span><span class="hint">Segunda a sexta, 9h às 18h</span><div class="actions"><button class="linkish" type="button" data-copy="3003-0794">Copiar número</button></div></div>
+    <div class="channel"><span class="label">E-mail</span><span class="value sm">atendimento@oabprev-rj.com.br</span><div class="actions"><button class="linkish" type="button" data-copy="atendimento@oabprev-rj.com.br">Copiar e-mail</button></div></div>
+    <div class="channel"><span class="label">Endereço</span><span class="value sm">Av. Beira Mar, 200, 7º andar, Centro, Rio de Janeiro, RJ</span><span class="hint">Atendimento presencial com agendamento <i class="tbc">confirmar</i></span></div>`;
+  document.querySelectorAll("[data-channels]").forEach(el => el.innerHTML = CHANNELS);
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-copy]");
+    if (!b) return;
+    const label = b.textContent;
+    const done = ok => { b.textContent = ok ? "Copiado" : b.dataset.copy; setTimeout(() => b.textContent = label, 1800); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(() => done(true), () => done(false)); } catch { done(false); }
+  });
+
+  // Menu móvel
+  const nav = document.getElementById("nav"), mb = document.getElementById("menu-btn");
+  const setMenu = open => { nav.dataset.open = String(open); mb.setAttribute("aria-expanded", String(open)); mb.textContent = open ? "Fechar" : "Menu"; };
+  mb.addEventListener("click", () => setMenu(nav.dataset.open !== "true"));
+
+  // Rotas por hash
+  const views = [...document.querySelectorAll("[data-view]")];
+  const sections = { transparencia: "inicio" };
+  const route = () => {
+    let h = location.hash.slice(1) || "inicio";
+    const anchor = sections[h] ? h : null;
+    if (anchor) h = sections[h];
+    if (!views.some(v => v.dataset.view === h)) h = "inicio";
+    views.forEach(v => v.hidden = v.dataset.view !== h);
+    document.querySelectorAll(".nav a.link").forEach(a => a.getAttribute("href") === "#" + h ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+    setMenu(false);
+    if (anchor) document.getElementById(anchor)?.scrollIntoView();
+    else window.scrollTo(0, 0);
+  };
+  addEventListener("hashchange", route);
+  route();
+
+  // Formulário (protótipo: valida e confirma na própria página)
+  const form = document.getElementById("contact-form"), status = document.getElementById("form-status");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const missing = [...form.querySelectorAll("[required]")].filter(f => !f.value.trim() || (f.type === "email" && !f.checkValidity()));
+    status.hidden = false;
+    if (missing.length) {
+      status.textContent = "Preencha nome, um e-mail válido e a mensagem para enviar.";
+      missing[0].focus();
+      return;
+    }
+    status.textContent = "Mensagem registrada. A resposta chega no e-mail " + form.elements.email.value + ".";
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
